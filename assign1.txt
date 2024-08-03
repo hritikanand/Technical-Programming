@@ -1,0 +1,116 @@
+//NOTE--I cracked the question after several tries as it has to be done with while look, but, I'm not
+able to use while look correctly. I have used the while look as comment with "**?" at the end to 
+let you know where i tried using it.
+
+
+Q4.INPUT:-
+
+#include <stdio.h>
+//include library
+int main()
+// declaring variables
+{
+    char choice;
+    int capa=30, capb=60, capc=90;
+    float tickets,concessions,kids, p; 
+    //bool i=true; ** ?
+     
+    printf("1 -Class A\n2 -Class B\n3 -Class C\n4 -Current Availability\n5- Exit\n");
+    printf("Enter your option...");
+    scanf("%c", &choice);
+    //while(i=true) **?
+    // using switch to give choices
+    switch (choice)
+    {
+        //if choice is 1
+    case '1':
+        printf("How many full tickets\n");
+        scanf("%f", &tickets);
+        printf("How many concession tickets - Senior and children under 12 and 3 above..\n");
+        scanf("%f", &concessions);
+        printf("How many kids under 3 years...\n");
+        scanf("%f", &kids);
+        //using if-else condition for considering number of tickets>available tickets 
+    if ((tickets+concessions+kids)>capa)
+    {
+        printf("More tickets are not available, enter less number of tickets\n");
+        printf("Total tickets available in Class A: %d", capa);
+        printf("Total tickets available in Class B: %d", capb);
+        printf("Total tickets available in Class C: %d", capc);
+    }
+    
+    else
+    {
+        //after the tickects is available
+        capa=capa-(tickets+concessions+kids);
+        p=p+(25*tickets+15*concessions);
+        printf("Your total ticket price is %.2f ", p);
+    }
+        break;
+       //if choice is 2 
+      case '2':
+        printf("How many full tickets\n");
+        scanf("%f", &tickets);
+        printf("How many concession tickets - Senior and children under 12 and 3 above..\n");
+        scanf("%f", &concessions);
+        printf("How many kids under 3 years...\n");
+        scanf("%f", &kids);
+    if ((tickets+concessions+kids)>capb)
+    {
+        printf("More tickets are not available, enter less number of tickets\n");
+        printf("Total tickets available in Class B: %d", capa);
+        printf("Total tickets available in Class A: %d", capb);
+        printf("Total tickets available in Class C: %d", capc);
+    }
+    
+    else
+    {
+        capa=capa-(tickets+concessions+kids);
+        p=p+(15*tickets+10*concessions);
+        printf("Your total ticket price is %.2f ", p);
+        break;
+    //if choice is 3
+      case '3':
+        printf("How many full tickets\n");
+        scanf("%f", &tickets);
+        printf("How many concession tickets - Senior and children under 12 and 3 above..\n");
+        scanf("%f", &concessions);
+        printf("How many kids under 3 years...\n");
+        scanf("%f", &kids);
+    if ((tickets+concessions+kids)>capa)
+    {
+        printf("More tickets are not available\n");
+        printf("Total tickets available in Class C: %d", capa);
+        printf("Total tickets available in Class A: %d", capb);
+        printf("Total tickets available in Class B: %d", capc);
+    }
+    
+    else
+    {
+        capa=capa-(tickets+concessions+kids);
+        p=p+(9*tickets+5*concessions);
+        printf("Your total ticket price is %.2f ", p);
+        break;
+    //if choice is 4
+      case '4':
+        printf("Class A tickets availability: ", capa);
+        printf("Class B tickets availability: ", capb);
+        printf("Class C tickets availability: ", capc);
+        break;
+    //if choice is 5
+      case '5':
+        printf("Exit");
+        break;
+    //i=false; **?
+      default:
+        printf("Invalid choice");
+        break;
+    }
+    }
+    
+    return 0;
+}}
+
+
+OUTPUT:-
+//NOTE-- Not able to paste here, so pasted on word doc(assign1.doc)
